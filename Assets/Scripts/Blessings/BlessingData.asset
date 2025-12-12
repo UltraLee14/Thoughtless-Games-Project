@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31364492270e69142b7196b725c5488a, type: 3}
+  m_Name: BlessingData
+  m_EditorClassIdentifier: 
+  playerSettings:
+    lookSpeed: 100
+  blessings:
+  - blessingName: Empty
+    unlocked: 1
+    blessingActive: 0
+    isCarrying: 0
+    itemImage: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+    blessingData: []
+  - blessingName: Skull Of Stealth
+    unlocked: 0
+    blessingActive: 0
+    isCarrying: 0
+    itemImage: {fileID: 21300000, guid: c461eb290063f2242884f7fab9642fb4, type: 3}
+    blessingData:
+    - variableStringName: detectionMultiplier
+      variableValue: 0.5
+    - variableStringName: detectionMultiplierStep
+      variableValue: 0.25
+  - blessingName: Crown of Capital
+    unlocked: 0
+    blessingActive: 0
+    isCarrying: 0
+    itemImage: {fileID: 21300000, guid: 3f8e45affdb72954fad8d81156d8edcd, type: 3}
+    blessingData:
+    - variableStringName: floorLootMultiplier
+      variableValue: 2
+  - blessingName: Pieces of Perception
+    unlocked: 0
+    blessingActive: 0
+    isCarrying: 0
+    itemImage: {fileID: 21300000, guid: 28db89a5957b2a948baf365dc0db3d1d, type: 3}
+    blessingData:
+    - variableStringName: sonarColliderSize
+      variableValue: 20
+    - variableStringName: sonarCharges
+      variableValue: 5
+  - blessingName: Anklet of Agility
+    unlocked: 0
+    blessingActive: 0
+    isCarrying: 0
+    itemImage: {fileID: 21300000, guid: 59b5547a840b3e44b92559113494cefd, type: 3}
+    blessingData:
+    - variableStringName: sonarColliderSize
+      variableValue: 20
+    - variableStringName: sonarCharges
+      variableValue: 5
