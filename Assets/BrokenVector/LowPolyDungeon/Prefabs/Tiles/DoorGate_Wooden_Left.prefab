@@ -13,12 +13,14 @@ GameObject:
   - component: {fileID: 6322556187635551634}
   - component: {fileID: 6322556187633357649}
   - component: {fileID: 739599285976623781}
+  - component: {fileID: 1065303963720814566}
+  - component: {fileID: 7511970658159328578}
   m_Layer: 0
   m_Name: DoorGate_Wooden_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6322556187633127282
 Transform:
@@ -34,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6322556187634454354
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -108,7 +110,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4354981115837747572, guid: 3ff66bdc0340eff42b48c79a6f8f0a21, type: 3}
 --- !u!208 &739599285976623781
@@ -127,3 +129,76 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.82900006, y: 1.8590001, z: 0.067}
   m_TimeToStationary: 0.5
+--- !u!114 &1065303963720814566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6322556187633357650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adfeb6c2d39d8c849812687e558e0228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prompt: Press F
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7511970658159328578}
+        m_TargetAssemblyTypeName: SetTransformToPoint, Assembly-CSharp
+        m_MethodName: NextPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7511970658159328578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6322556187633357650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47aec8c6a125f044386f95355731a6d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - localPosition: {x: 0, y: 0, z: 0}
+    usePosX: 0
+    usePosY: 0
+    usePosZ: 0
+    posXDuration: 0
+    posYDuration: 0
+    posZDuration: 0
+    positionLinear: 0
+    localRotation: {x: 0, y: 90, z: 0}
+    useRotX: 0
+    useRotY: 1
+    useRotZ: 0
+    rotXDuration: 0
+    rotYDuration: 0.5
+    rotZDuration: 0
+    rotationLinear: 0
+  - localPosition: {x: 0, y: 0, z: 0}
+    usePosX: 0
+    usePosY: 0
+    usePosZ: 0
+    posXDuration: 0
+    posYDuration: 0
+    posZDuration: 0
+    positionLinear: 0
+    localRotation: {x: 0, y: 0, z: 0}
+    useRotX: 0
+    useRotY: 1
+    useRotZ: 0
+    rotXDuration: 0
+    rotYDuration: 0.5
+    rotZDuration: 0
+    rotationLinear: 0

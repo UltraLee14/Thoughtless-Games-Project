@@ -13,12 +13,14 @@ GameObject:
   - component: {fileID: 2642311626251748140}
   - component: {fileID: 2642311626253688301}
   - component: {fileID: 4713880207308090329}
-  m_Layer: 0
+  - component: {fileID: 5009890791362497146}
+  - component: {fileID: 4758531888850665843}
+  m_Layer: 10
   m_Name: Door_Wooden_Round_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2642311626253648332
 Transform:
@@ -34,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2642311626250748396
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -108,7 +110,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4690904050770353206, guid: 18ba769f6f471c94ba78b15f094317ba, type: 3}
 --- !u!208 &4713880207308090329
@@ -127,3 +129,76 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.64500004, y: 1.113, z: 0.051000003}
   m_TimeToStationary: 0.5
+--- !u!114 &5009890791362497146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2642311626253688300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47aec8c6a125f044386f95355731a6d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - localPosition: {x: 0, y: 0, z: 0}
+    usePosX: 0
+    usePosY: 0
+    usePosZ: 0
+    posXDuration: 0
+    posYDuration: 0
+    posZDuration: 0
+    positionLinear: 0
+    localRotation: {x: 0, y: 90, z: 0}
+    useRotX: 0
+    useRotY: 1
+    useRotZ: 0
+    rotXDuration: 0
+    rotYDuration: 0.5
+    rotZDuration: 0
+    rotationLinear: 0
+  - localPosition: {x: 0, y: 0, z: 0}
+    usePosX: 0
+    usePosY: 0
+    usePosZ: 0
+    posXDuration: 0
+    posYDuration: 0
+    posZDuration: 0
+    positionLinear: 0
+    localRotation: {x: 0, y: 0, z: 0}
+    useRotX: 0
+    useRotY: 1
+    useRotZ: 0
+    rotXDuration: 0
+    rotYDuration: 0.5
+    rotZDuration: 0
+    rotationLinear: 0
+--- !u!114 &4758531888850665843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2642311626253688300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adfeb6c2d39d8c849812687e558e0228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prompt: Press F
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5009890791362497146}
+        m_TargetAssemblyTypeName: SetTransformToPoint, Assembly-CSharp
+        m_MethodName: NextPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

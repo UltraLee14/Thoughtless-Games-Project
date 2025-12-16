@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8971399676815563288}
   - component: {fileID: 8971399676813624615}
   - component: {fileID: 2780465280276937207}
+  - component: {fileID: 6486779465793179669}
+  - component: {fileID: 1446301730235486459}
   m_Layer: 0
   m_Name: Door_Iron_Left
   m_TagString: Untagged
@@ -130,3 +132,32 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!114 &6486779465793179669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971399676813624536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adfeb6c2d39d8c849812687e558e0228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prompt: Press F
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1446301730235486459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971399676813624536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47aec8c6a125f044386f95355731a6d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: []

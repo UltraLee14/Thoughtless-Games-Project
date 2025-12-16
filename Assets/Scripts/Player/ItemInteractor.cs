@@ -18,6 +18,10 @@ public class ItemInteractor : MonoBehaviour
     [SerializeField] KeyCode interactKey = KeyCode.F;
     [SerializeField] bool includeTriggers = false;
 
+    [Header("Hover Zone")]
+    [SerializeField, InspectorName("Hover Radius (m)")]
+    float hoverRadius = 0.15f;
+
     [Header("Hover Events")]
     [SerializeField] UnityEvent OnHoverInteractable;
     [SerializeField] UnityEvent OnStopHoverInteractable;
@@ -56,7 +60,14 @@ public class ItemInteractor : MonoBehaviour
 
         var triggerMode = includeTriggers ? QueryTriggerInteraction.Collide : QueryTriggerInteraction.Ignore;
 
-        if (Physics.Raycast(origin, direction, out hit, interactRange, interactMask, triggerMode))
+        bool didHit;
+
+        if (hoverRadius > 0f)
+            didHit = Physics.SphereCast(origin, hoverRadius, direction, out hit, interactRange, interactMask, triggerMode);
+        else
+            didHit = Physics.Raycast(origin, direction, out hit, interactRange, interactMask, triggerMode);
+
+        if (didHit)
         {
             currentInteractable = hit.collider.GetComponentInParent<IInteractable>();
 

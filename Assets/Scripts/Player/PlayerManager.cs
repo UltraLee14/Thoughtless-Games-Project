@@ -183,6 +183,14 @@ public class PlayerManager : MonoBehaviour
         StartEvent?.Invoke();
 
         StartCoroutine(HeartbeatLoop());
+
+        if (Application.isFocused)
+            Cursor.visible = false;
+    }
+
+    void OnApplicationFocus(bool hasFocus)
+    {
+        Cursor.visible = !hasFocus;
     }
 
     void Update()
