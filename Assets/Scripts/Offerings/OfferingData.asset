@@ -21,7 +21,3 @@ MonoBehaviour:
     unlocked: 0
     isCarrying: 0
     offeringData: []
-  - offeringName: OfferingTwo
-    unlocked: 0
-    isCarrying: 0
-    offeringData: []
