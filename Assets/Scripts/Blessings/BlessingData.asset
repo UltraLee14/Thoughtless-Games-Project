@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BlessingData
   m_EditorClassIdentifier: 
   playerSettings:
-    lookSpeed: 400
+    lookSpeed: 300
   blessings:
   - blessingName: Empty
     unlocked: 1
@@ -31,29 +31,21 @@ MonoBehaviour:
       variableValue: 1
     - variableStringName: detectionMultiplierStep
       variableValue: 1
-  - blessingName: Glided Crown
-    unlocked: 0
-    blessingActive: 0
-    isCarrying: 0
-    itemImage: {fileID: 21300000, guid: 3f8e45affdb72954fad8d81156d8edcd, type: 3}
-    blessingData:
-    - variableStringName: 
-      variableValue: 0
-  - blessingName: Pieces of Perception
-    unlocked: 0
-    blessingActive: 0
-    isCarrying: 0
-    itemImage: {fileID: 21300000, guid: 28db89a5957b2a948baf365dc0db3d1d, type: 3}
-    blessingData:
-    - variableStringName: sonarColliderSize
-      variableValue: 20
-    - variableStringName: sonarCharges
-      variableValue: 5
   - blessingName: Anklet of Agility
     unlocked: 0
     blessingActive: 0
     isCarrying: 0
     itemImage: {fileID: 21300000, guid: 59b5547a840b3e44b92559113494cefd, type: 3}
+    blessingData:
+    - variableStringName: sonarColliderSize
+      variableValue: 20
+    - variableStringName: sonarCharges
+      variableValue: 5
+  - blessingName: Horn of Sonar
+    unlocked: 0
+    blessingActive: 0
+    isCarrying: 0
+    itemImage: {fileID: 21300000, guid: 28db89a5957b2a948baf365dc0db3d1d, type: 3}
     blessingData:
     - variableStringName: sonarColliderSize
       variableValue: 20

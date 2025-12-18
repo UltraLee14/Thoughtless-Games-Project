@@ -68,6 +68,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField, HideInInspector, InspectorName("Sonar Charges")]
     int sonarCharges;
 
+    [SerializeField, HideInInspector, InspectorName("Sonar Text")]
+    TMP_Text sonarText;
+
     [SerializeField, InspectorName("Detection Multiplier")]
     float detectionMultiplier;
 
@@ -148,6 +151,19 @@ public class PlayerManager : MonoBehaviour
     [SerializeField, InspectorName("Sprint Set To False")]
     UnityEvent SprintSetToFalse;
 
+    [Header("Movement Events")]
+    [SerializeField, InspectorName("Start Sprint")]
+    UnityEvent StartSprint;
+
+    [SerializeField, InspectorName("Start Walk")]
+    UnityEvent StartWalk;
+
+    [SerializeField, InspectorName("Start Sneak")]
+    UnityEvent StartSneak;
+
+    [SerializeField, InspectorName("Not Moving")]
+    UnityEvent NotMoving;
+
     [SerializeField, InspectorName("Start Event")]
     UnityEvent StartEvent;
 
@@ -160,6 +176,17 @@ public class PlayerManager : MonoBehaviour
     bool jumpRequested;
 
     bool clank0Fired, clank1Fired, clank2Fired, clank3Fired, clank4Fired;
+
+    enum MoveEventState
+    {
+        NotMoving,
+        Walk,
+        Sprint,
+        Sneak
+    }
+
+    MoveEventState lastMoveEventState = MoveEventState.NotMoving;
+    bool lastIsMoving;
 
     void Start()
     {
@@ -186,6 +213,11 @@ public class PlayerManager : MonoBehaviour
 
         if (Application.isFocused)
             Cursor.visible = false;
+
+        lastIsMoving = isMoving;
+        lastMoveEventState = MoveEventState.NotMoving;
+
+        UpdateSonarText();
     }
 
     void OnApplicationFocus(bool hasFocus)
@@ -271,6 +303,10 @@ public class PlayerManager : MonoBehaviour
 
         if (debugClankTimerText != null)
             debugClankTimerText.text = clankTimer.ToString();
+
+        UpdateSonarText();
+
+        EvaluateMovementEvents();
     }
 
     void FixedUpdate()
@@ -317,6 +353,52 @@ public class PlayerManager : MonoBehaviour
             isMoving = currentLocalMoveVelocity.sqrMagnitude > 0.0001f;
         }
         jumpRequested = false;
+
+        EvaluateMovementEvents();
+    }
+
+    void UpdateSonarText()
+    {
+        if (sonarText != null)
+            sonarText.text = $"Sonar Pulse: {sonarCharges}";
+    }
+
+    void EvaluateMovementEvents()
+    {
+        if (lastIsMoving && !isMoving)
+        {
+            NotMoving?.Invoke();
+        }
+
+        MoveEventState currentState = DetermineMoveEventState();
+
+        if (currentState != lastMoveEventState)
+        {
+            if (currentState == MoveEventState.Sprint)
+                StartSprint?.Invoke();
+            else if (currentState == MoveEventState.Sneak)
+                StartSneak?.Invoke();
+            else if (currentState == MoveEventState.Walk)
+                StartWalk?.Invoke();
+
+            lastMoveEventState = currentState;
+        }
+
+        lastIsMoving = isMoving;
+    }
+
+    MoveEventState DetermineMoveEventState()
+    {
+        if (!isMoving)
+            return MoveEventState.NotMoving;
+
+        if (isSprintActive)
+            return MoveEventState.Sprint;
+
+        if (sneakActive)
+            return MoveEventState.Sneak;
+
+        return MoveEventState.Walk;
     }
 
     void ClankTick()
@@ -453,6 +535,7 @@ public class PlayerManager : MonoBehaviour
             return;
 
         sonarCharges--;
+        UpdateSonarText();
         StartCoroutine(SonarPulse());
     }
 
@@ -495,6 +578,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         ApplySonarSettings();
+        UpdateSonarText();
     }
 
     void ApplyPlayerSettingsFromBlessingData()
@@ -644,6 +728,7 @@ public class PlayerManagerEditor : Editor
     SerializedProperty sonarColliderProp;
     SerializedProperty sonarColliderSizeProp;
     SerializedProperty sonarChargesProp;
+    SerializedProperty sonarTextProp;
 
     void OnEnable()
     {
@@ -674,6 +759,7 @@ public class PlayerManagerEditor : Editor
         sonarColliderProp = serializedObject.FindProperty("sonarCollider");
         sonarColliderSizeProp = serializedObject.FindProperty("sonarColliderSize");
         sonarChargesProp = serializedObject.FindProperty("sonarCharges");
+        sonarTextProp = serializedObject.FindProperty("sonarText");
     }
 
     public override void OnInspectorGUI()
@@ -690,6 +776,7 @@ public class PlayerManagerEditor : Editor
             EditorGUILayout.PropertyField(sonarColliderProp, new GUIContent("Sonar Collider"));
             EditorGUILayout.PropertyField(sonarColliderSizeProp, new GUIContent("Sonar Collider Size"));
             EditorGUILayout.PropertyField(sonarChargesProp, new GUIContent("Sonar Charges"));
+            EditorGUILayout.PropertyField(sonarTextProp, new GUIContent("Sonar Text"));
             EditorGUI.indentLevel--;
         }
 

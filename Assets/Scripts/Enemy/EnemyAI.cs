@@ -60,6 +60,9 @@ public class EnemyAI : MonoBehaviour
     [SerializeField, InspectorName("Player In Sight Event")]
     UnityEvent PlayerInSightEvent;
 
+    [SerializeField, InspectorName("Pursuit Start Event")]
+    UnityEvent PursuitStartEvent;
+
     [SerializeField, InspectorName("Pursuit End Event")]
     UnityEvent PursuitEndEvent;
 
@@ -241,7 +244,6 @@ public class EnemyAI : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Sonar sphere triggers SonarEvent regardless of AI state
         if (other.isTrigger && other.CompareTag("SonarSphere"))
         {
             SonarEvent?.Invoke();
@@ -337,11 +339,16 @@ public class EnemyAI : MonoBehaviour
 
     public void SetAIStatePursuit()
     {
+        bool wasInPursuit = (currentAIState == AIState.Pursuit) || inPursuit;
+
         currentAIState = AIState.Pursuit;
         SetCanMove(true);
         scanning = false;
         inPursuit = true;
         ResetViewCameraYaw();
+
+        if (!wasInPursuit)
+            PursuitStartEvent?.Invoke();
     }
 
     void UpdateMovement()

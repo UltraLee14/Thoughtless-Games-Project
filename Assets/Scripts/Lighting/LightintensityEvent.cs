@@ -1,19 +1,17 @@
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 using System.Collections;
-
-[System.Serializable]
-public struct IntensityPoint
-{
-    public float Intensity;
-
-    public Color Color;
-    public float transitionDuration;
-    public float delay;
-}
 
 public class LightIntensityEvent : MonoBehaviour
 {
+    [System.Serializable]
+    public struct IntensityPoint
+    {
+        public float Intensity;
+        public Color Color;
+        public float transitionDuration;
+        public float delay;
+    }
+
     [SerializeField, InspectorName("Intensity Points")]
     public IntensityPoint[] intensityPoints;
 
@@ -40,13 +38,11 @@ public class LightIntensityEvent : MonoBehaviour
             float t = 0f;
 
             float startI = l.intensity;
-
             Color startC = l.color;
 
             if (d <= 0f)
             {
                 l.intensity = p.Intensity;
-
                 l.color = p.Color;
             }
             else
@@ -56,7 +52,6 @@ public class LightIntensityEvent : MonoBehaviour
                     t += Time.deltaTime;
                     float a = Mathf.Clamp01(t / d);
                     l.intensity = Mathf.Lerp(startI, p.Intensity, a);
-                  
                     l.color = Color.Lerp(startC, p.Color, a);
                     yield return null;
                 }

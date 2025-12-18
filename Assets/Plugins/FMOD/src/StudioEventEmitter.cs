@@ -53,6 +53,9 @@ namespace FMODUnity
 
         private const string SnapshotString = "snapshot";
 
+        private const float ManualStopFadeDuration = 3f;
+        private Coroutine manualStopFadeCoroutine;
+
         public FMOD.Studio.EventDescription EventDescription { get { return eventDescription; } }
 
         public FMOD.Studio.EventInstance EventInstance { get { return instance; } }
@@ -129,7 +132,6 @@ namespace FMODUnity
 
             HandleGameEvent(EmitterGameEvent.ObjectStart);
 
-            // If a Rigidbody or Rigidbody2D is present on this GameObject, turn off "NonRigidbodyVelocity"
 #if UNITY_PHYSICS_EXIST
             if (NonRigidbodyVelocity && GetComponent<Rigidbody>())
             {
@@ -153,6 +155,12 @@ namespace FMODUnity
 
         protected override void OnDestroy()
         {
+            if (manualStopFadeCoroutine != null)
+            {
+                StopCoroutine(manualStopFadeCoroutine);
+                manualStopFadeCoroutine = null;
+            }
+
             if (!isQuitting)
             {
                 HandleGameEvent(EmitterGameEvent.ObjectDestroy);
@@ -205,6 +213,17 @@ namespace FMODUnity
 
         public void Play()
         {
+            if (manualStopFadeCoroutine != null)
+            {
+                StopCoroutine(manualStopFadeCoroutine);
+                manualStopFadeCoroutine = null;
+            }
+
+            if (instance.isValid())
+            {
+                instance.setVolume(1f);
+            }
+
             if (TriggerOnce && hasTriggered)
             {
                 return;
@@ -252,6 +271,17 @@ namespace FMODUnity
 
         private void PlayInstance()
         {
+            if (manualStopFadeCoroutine != null)
+            {
+                StopCoroutine(manualStopFadeCoroutine);
+                manualStopFadeCoroutine = null;
+            }
+
+            if (instance.isValid())
+            {
+                instance.setVolume(1f);
+            }
+
             if (!instance.isValid())
             {
                 instance.clearHandle();
@@ -326,7 +356,90 @@ namespace FMODUnity
             DeregisterActiveEmitter(this);
             IsActive = false;
             cachedParams.Clear();
+
+            if (manualStopFadeCoroutine != null)
+            {
+                StopCoroutine(manualStopFadeCoroutine);
+                manualStopFadeCoroutine = null;
+            }
+
+            if (AllowFadeout && instance.isValid() && IsPlaying())
+            {
+                manualStopFadeCoroutine = StartCoroutine(ManualFadeOutThenStopRoutine());
+                return;
+            }
+
             StopInstance();
+        }
+
+        public void stop()
+        {
+            DeregisterActiveEmitter(this);
+            IsActive = false;
+            cachedParams.Clear();
+
+            if (manualStopFadeCoroutine != null)
+            {
+                StopCoroutine(manualStopFadeCoroutine);
+                manualStopFadeCoroutine = null;
+            }
+
+            if (TriggerOnce && hasTriggered)
+            {
+                DeregisterActiveEmitter(this);
+            }
+
+            if (instance.isValid())
+            {
+                instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                instance.release();
+                instance.clearHandle();
+            }
+        }
+
+        private IEnumerator ManualFadeOutThenStopRoutine()
+        {
+            if (TriggerOnce && hasTriggered)
+            {
+                DeregisterActiveEmitter(this);
+            }
+
+            if (!instance.isValid())
+            {
+                manualStopFadeCoroutine = null;
+                yield break;
+            }
+
+            float startVolume = 1f;
+            float finalVolume;
+            instance.getVolume(out startVolume, out finalVolume);
+
+            float d = Mathf.Max(0.0001f, ManualStopFadeDuration);
+            float t = 0f;
+
+            while (t < d)
+            {
+                if (!instance.isValid())
+                {
+                    manualStopFadeCoroutine = null;
+                    yield break;
+                }
+
+                float a = t / d;
+                instance.setVolume(Mathf.Lerp(startVolume, 0f, a));
+                t += Time.deltaTime;
+                yield return null;
+            }
+
+            if (instance.isValid())
+            {
+                instance.setVolume(0f);
+                instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                instance.release();
+                instance.clearHandle();
+            }
+
+            manualStopFadeCoroutine = null;
         }
 
         private void StopInstance()

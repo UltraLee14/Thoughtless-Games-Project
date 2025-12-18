@@ -88,11 +88,15 @@
 		</relationship>
 	</object>
 	<object class="MultiSound" id="{3f0737de-e36b-4848-8500-ba726693a88a}">
+		<property name="isCutoff">
+			<value>true</value>
+		</property>
+		<property name="pitch">
+			<value>8</value>
+		</property>
 		<relationship name="sounds">
 			<destination>{985d58a9-8ffb-48ce-bc82-6abd83286643}</destination>
 			<destination>{1b710be7-d382-499d-a455-77e627992f03}</destination>
-			<destination>{659622b4-f82d-4efd-98d9-e0813cd23fc6}</destination>
-			<destination>{4d9af4ec-436b-400d-8a25-cd5d6c1a760c}</destination>
 		</relationship>
 	</object>
 	<object class="MultiSound" id="{43da4341-87b9-4e56-833c-e41d79c177ba}">
@@ -126,16 +130,6 @@
 	<object class="SingleSound" id="{1b710be7-d382-499d-a455-77e627992f03}">
 		<relationship name="audioFile">
 			<destination>{e08db337-8f56-4100-8a08-48a6ff4b9478}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{659622b4-f82d-4efd-98d9-e0813cd23fc6}">
-		<relationship name="audioFile">
-			<destination>{3707284e-3a13-409c-97fa-c6bc88769d34}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{4d9af4ec-436b-400d-8a25-cd5d6c1a760c}">
-		<relationship name="audioFile">
-			<destination>{5c03b4eb-455d-4c58-abf6-8731038c326b}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{e144c301-034e-46b6-8373-f353549783cc}">

@@ -76,7 +76,10 @@
 	</object>
 	<object class="SingleSound" id="{d87d0849-1311-4542-a158-6515c1361f10}">
 		<property name="length">
-			<value>1.51</value>
+			<value>1.0299999999999996</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>0.47999999999999998</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{69bb5fef-f2f9-4fb3-9aae-2aec85a58452}</destination>
@@ -91,9 +94,11 @@
 	<object class="MixerBusEffectChain" id="{06ad15c7-84ec-4472-ba0e-5056ae0d4d87}">
 		<relationship name="effects">
 			<destination>{93277826-6291-431a-9332-78f4be72249c}</destination>
+			<destination>{47260dce-0835-4e7d-bad5-64e209780c01}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{f0d6cd79-2697-4455-9d81-5f5eae0801af}" />
 	<object class="MixerBusFader" id="{0febe693-f00b-482d-8dea-9f279c6b2c89}" />
 	<object class="MixerBusFader" id="{93277826-6291-431a-9332-78f4be72249c}" />
+	<object class="ObjectSpatialiserEffect" id="{47260dce-0835-4e7d-bad5-64e209780c01}" />
 </objects>

@@ -130,7 +130,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 8330257467790683817}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -157,7 +157,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 8330257467790683817}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -190,6 +190,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 11000
+--- !u!114 &-5893232700103207881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Scraping_Metal_Door_Short
+  m_EditorClassIdentifier: 
+  Path: event:/Scraping_Metal_Door_Short
+  Guid:
+    Data1: -1651462946
+    Data2: 1156991853
+    Data3: 777457300
+    Data4: -1819420936
+  Banks:
+  - {fileID: 8330257467790683817}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4043
 --- !u!114 &-5830330560384255604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,11 +265,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8330257467790683817}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 50
   Length: 2000
 --- !u!114 &-5192823456469846144
 MonoBehaviour:
@@ -270,7 +297,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 3987
+  Length: 3787
 --- !u!114 &-4874992398083976334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,7 +379,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 37560
+  Length: 9000
 --- !u!114 &-3316949997543839611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,12 +428,12 @@ MonoBehaviour:
   Banks:
   - {fileID: 8330257467790683817}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1510
+  Length: 1030
 --- !u!114 &-2246677850934613401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,7 +444,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Footsteps/Footsteps
+  m_Name: parameter:/FootSteps/Footsteps
   m_EditorClassIdentifier: 
   Name: Footsteps
   StudioPath: 
@@ -496,13 +523,19 @@ MonoBehaviour:
   - {fileID: 7959534945988137556}
   - {fileID: -7745219542008703919}
   - {fileID: 1079052874506090490}
+  - {fileID: -5893232700103207881}
+  - {fileID: 256706262900139092}
+  - {fileID: 7209553028947376875}
+  - {fileID: 830555669089126038}
+  - {fileID: 5035960674898588578}
+  - {fileID: 5900479238324849228}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8330257467790683817}
   StringsBanks:
   - {fileID: 3614550853777317127}
   cacheVersion: 131856
-  cacheTime: 639016490179319152
+  cacheTime: 639016600524280302
   SerializableEventsDict:
   - key: event:/Title_Music
     index: 0
@@ -516,7 +549,7 @@ MonoBehaviour:
     index: 4
   - key: event:/Cultist_Investagation
     index: 5
-  - key: event:/Footsteps
+  - key: event:/FootSteps
     index: 6
   - key: event:/Barn_Door_Open
     index: 7
@@ -546,6 +579,18 @@ MonoBehaviour:
     index: 19
   - key: event:/BG_Music
     index: 20
+  - key: event:/Scraping_Metal_Door_Short
+    index: 21
+  - key: event:/Heart_Beat
+    index: 22
+  - key: event:/Clank_Increase
+    index: 23
+  - key: event:/Button_Click
+    index: 24
+  - key: event:/FootStepsFix
+    index: 25
+  - key: event:/SprintFix
+    index: 26
 --- !u!114 &89329432984247090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,12 +612,39 @@ MonoBehaviour:
   Banks:
   - {fileID: 8330257467790683817}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 5
   Length: 4180
+--- !u!114 &256706262900139092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heart_Beat
+  m_EditorClassIdentifier: 
+  Path: event:/Heart_Beat
+  Guid:
+    Data1: 1164385261
+    Data2: 1234444068
+    Data3: -1544609604
+    Data4: 2048780467
+  Banks:
+  - {fileID: 8330257467790683817}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 900
 --- !u!114 &424636886777986289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,6 +672,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
+--- !u!114 &830555669089126038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Button_Click
+  m_EditorClassIdentifier: 
+  Path: event:/Button_Click
+  Guid:
+    Data1: 613729984
+    Data2: 1101211284
+    Data3: 1088365228
+    Data4: -1014192581
+  Banks:
+  - {fileID: 8330257467790683817}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1097
 --- !u!114 &867186804364342221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,9 +756,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Footsteps
+  m_Name: event:/FootSteps
   m_EditorClassIdentifier: 
-  Path: event:/Footsteps
+  Path: event:/FootSteps
   Guid:
     Data1: -1597462392
     Data2: 1176752885
@@ -770,12 +869,12 @@ MonoBehaviour:
   Banks:
   - {fileID: 8330257467790683817}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 9520
+  Length: 3800
 --- !u!114 &3102707147194922531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,11 +910,38 @@ MonoBehaviour:
   Path: FMOD_Studio_Project/Thoughtless_Games/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639016490179319152
+  lastModified: 639016600524280302
   FileSizes:
   - Name: Desktop
-    Value: 1850
+    Value: 2116
   Exists: 1
+--- !u!114 &5035960674898588578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FootStepsFix
+  m_EditorClassIdentifier: 
+  Path: event:/FootStepsFix
+  Guid:
+    Data1: 1978424944
+    Data2: 1300511385
+    Data3: 639957927
+    Data4: 267696042
+  Banks:
+  - {fileID: 8330257467790683817}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 800
 --- !u!114 &5613710748949485783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,6 +969,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1500
+--- !u!114 &5900479238324849228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SprintFix
+  m_EditorClassIdentifier: 
+  Path: event:/SprintFix
+  Guid:
+    Data1: -317200348
+    Data2: 1314968032
+    Data3: -1783916144
+    Data4: 1615669072
+  Banks:
+  - {fileID: 8330257467790683817}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 290
 --- !u!114 &6040919977344952966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,6 +1023,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 57142
+--- !u!114 &7209553028947376875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Clank_Increase
+  m_EditorClassIdentifier: 
+  Path: event:/Clank_Increase
+  Guid:
+    Data1: -1406448517
+    Data2: 1084057283
+    Data3: 1249339012
+    Data4: -1824942622
+  Banks:
+  - {fileID: 8330257467790683817}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1320
 --- !u!114 &7959534945988137556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,7 +1071,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 8330257467790683817}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -923,7 +1103,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 14962
+  Length: 4200
 --- !u!114 &8330257467790683817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,10 +1119,10 @@ MonoBehaviour:
   Path: FMOD_Studio_Project/Thoughtless_Games/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639016490179298883
+  lastModified: 639016600524250232
   FileSizes:
   - Name: Desktop
-    Value: 3726016
+    Value: 3776352
   Exists: 1
 --- !u!114 &9033338577633012461
 MonoBehaviour:
