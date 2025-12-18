@@ -40933,6 +40933,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 605556145}
+  - component: {fileID: 774999061}
   m_Layer: 0
   m_Name: Door_Wooden_Round_Right
   m_TagString: Untagged
@@ -40940,6 +40941,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &774999061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774999060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1511798637
+      Data2: 1207235016
+      Data3: 1324236977
+      Data4: 136823093
+    Path: event:/Wooden_Door_Open
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &775183626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66197,6 +66229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1275671775}
+  - component: {fileID: 1275671776}
   m_Layer: 0
   m_Name: Door_Wooden_Left
   m_TagString: Untagged
@@ -66220,6 +66253,37 @@ Transform:
   - {fileID: 5362895398283560803}
   m_Father: {fileID: 1773433552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1275671776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275671774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1511798637
+      Data2: 1207235016
+      Data3: 1324236977
+      Data4: 136823093
+    Path: event:/Wooden_Door_Open
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &1276080045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1149450743610261583, guid: dc02f77b0506f764c9d22c61c681c4af, type: 3}
@@ -110452,6 +110516,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1532242675793578974}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &620471811972299087
 Transform:
   m_ObjectHideFlags: 0
@@ -110614,6 +110690,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1532242675793578973}
+  - component: {fileID: 1532242675793578974}
   m_Layer: 0
   m_Name: Double_Doors
   m_TagString: Untagged
@@ -111405,6 +111482,37 @@ Transform:
   - {fileID: 8904908913613048740}
   m_Father: {fileID: 1773433552}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &1532242675793578974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036371262670829003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1511798637
+      Data2: 1207235016
+      Data3: 1324236977
+      Data4: 136823093
+    Path: event:/Wooden_Door_Open
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &1638395702958862584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113013,6 +113121,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6728614574037572660}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!23 &3530487433505090979
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -114208,6 +114328,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7323286858052167576}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &4065475708361584970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114726,6 +114858,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 774999061}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4377115942071072730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115014,6 +115158,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1638395702958862584}
         m_TargetAssemblyTypeName: SetTransformToPoint, Assembly-CSharp
         m_MethodName: NextPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6728614574037572660}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -115855,6 +116011,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6728614574037572659}
+  - component: {fileID: 6728614574037572660}
   m_Layer: 0
   m_Name: Double_Doors
   m_TagString: Untagged
@@ -117570,6 +117727,37 @@ Transform:
   - {fileID: 3726692048418757706}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6728614574037572660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5062793625360048677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1511798637
+      Data2: 1207235016
+      Data3: 1324236977
+      Data4: 136823093
+    Path: event:/Wooden_Door_Open
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &6730397242121987693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118134,6 +118322,7 @@ GameObject:
   - component: {fileID: 3346269074305714490}
   - component: {fileID: 2321717627496483534}
   - component: {fileID: 7323286857800182415}
+  - component: {fileID: 7323286857800182416}
   m_Layer: 0
   m_Name: BasementExfilDoor
   m_TagString: Untagged
@@ -118162,6 +118351,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.2976079, y: 2.119701, z: 0.114197105}
   m_Center: {x: -0.59342825, y: 1.1192057, z: 0.0000011343509}
+--- !u!114 &7323286857800182416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7323286857800182414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1511798637
+      Data2: 1207235016
+      Data3: 1324236977
+      Data4: 136823093
+    Path: event:/Wooden_Door_Open
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!33 &7323286858048743350
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -118230,6 +118450,7 @@ GameObject:
   - component: {fileID: 2321717627212028918}
   - component: {fileID: 4054825136097057024}
   - component: {fileID: 7323286858052167575}
+  - component: {fileID: 7323286858052167576}
   m_Layer: 0
   m_Name: Basement Door Left (1)
   m_TagString: Untagged
@@ -118273,6 +118494,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.2976079, y: 2.119701, z: 0.114197105}
   m_Center: {x: -0.59342825, y: 1.1192057, z: 0.0000011343509}
+--- !u!114 &7323286858052167576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7323286858052139958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -912253892
+      Data2: 1313384463
+      Data3: 1051831444
+      Data4: -768455498
+    Path: event:/Scraping_Metal_Door
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7432622558913181319
 GameObject:
   m_ObjectHideFlags: 0
@@ -118958,6 +119210,7 @@ GameObject:
   - component: {fileID: 7586093320867321721}
   - component: {fileID: 1232143752451867275}
   - component: {fileID: 7586093320869746074}
+  - component: {fileID: 7586093320869746075}
   m_Layer: 0
   m_Name: BasementExfilTorch
   m_TagString: Untagged
@@ -119021,6 +119274,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7586093320869746075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7586093320869251513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 294173098
+      Data2: 1233450187
+      Data3: 401847438
+      Data4: 1670003993
+    Path: event:/Interact_Sound
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7586093321036640125
 GameObject:
   m_ObjectHideFlags: 0
@@ -120203,6 +120487,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1532242675793578974}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &8695466375332512282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -121079,15 +121375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f0c4d76d624b844bdf3d6c4e677570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensityPoints:
-  - Intensity: 75
-    Color: {r: 1, g: 0, b: 0, a: 1}
-    transitionDuration: 2.5
-    delay: 30
-  - Intensity: 2
-    Color: {r: 1, g: 0.45490196, b: 0.043137256, a: 1}
-    transitionDuration: 2.5
-    delay: 1
 --- !u!114 &9184372115899083658
 MonoBehaviour:
   m_ObjectHideFlags: 0

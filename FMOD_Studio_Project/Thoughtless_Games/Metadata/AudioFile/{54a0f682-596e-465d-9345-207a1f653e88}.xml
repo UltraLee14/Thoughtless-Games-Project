@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{54a0f682-596e-465d-9345-207a1f653e88}">
+		<property name="assetPath">
+			<value>human-heartbeat-60-bpm-87143.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.2560000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1aa1e19a-4e2c-45eb-ba76-d4be7bbdda8a}</destination>
+		</relationship>
+	</object>
+</objects>
