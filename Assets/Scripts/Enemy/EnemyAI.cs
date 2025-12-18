@@ -32,6 +32,9 @@ public class EnemyAI : MonoBehaviour
     [SerializeField, InspectorName("Investigate Speed")]
     float investigateSpeed;
 
+    [SerializeField, InspectorName("Investigate Exit Time")]
+    float investigateExitTime;
+
     [SerializeField, InspectorName("Investigate Active")]
     bool investigateActive;
 
@@ -229,7 +232,7 @@ public class EnemyAI : MonoBehaviour
 
     System.Collections.IEnumerator ExitInvestigateRoutine()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(investigateExitTime);
 
         investigateActive = false;
         InvestigateEndEvent?.Invoke();
