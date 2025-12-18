@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{9779e225-c455-4373-9b93-f6da29fee728}">
+		<property name="assetPath">
+			<value>Jump_Land_001.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.5267800453514739</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1aa1e19a-4e2c-45eb-ba76-d4be7bbdda8a}</destination>
+		</relationship>
+	</object>
+</objects>
