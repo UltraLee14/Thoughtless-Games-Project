@@ -45,6 +45,9 @@ public class EnemyAI : MonoBehaviour
     [SerializeField, InspectorName("Pursuit Speed")]
     float pursuitSpeed;
 
+    [SerializeField, InspectorName("Pursuit End Delay")]
+    float pursuitEvadeTime;
+
     [SerializeField, InspectorName("Player In Sight")]
     bool playerInSight;
 
@@ -179,7 +182,7 @@ public class EnemyAI : MonoBehaviour
             {
                 pursuitNoSightTimer += Time.deltaTime;
 
-                if (!pursuitEndEventTriggered && pursuitNoSightTimer >= 3f)
+                if (!pursuitEndEventTriggered && pursuitNoSightTimer >= pursuitEvadeTime)
                 {
                     inPursuit = false;
                     PursuitEndEvent?.Invoke();

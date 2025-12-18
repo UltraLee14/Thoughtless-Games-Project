@@ -31,14 +31,14 @@ MonoBehaviour:
       variableValue: 0.5
     - variableStringName: detectionMultiplierStep
       variableValue: 0.25
-  - blessingName: Crown of Capital
+  - blessingName: Glided Crown
     unlocked: 0
     blessingActive: 0
     isCarrying: 0
     itemImage: {fileID: 21300000, guid: 3f8e45affdb72954fad8d81156d8edcd, type: 3}
     blessingData:
-    - variableStringName: floorLootMultiplier
-      variableValue: 2
+    - variableStringName: 
+      variableValue: 0
   - blessingName: Pieces of Perception
     unlocked: 0
     blessingActive: 0
