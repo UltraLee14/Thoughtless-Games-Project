@@ -8,6 +8,8 @@ TagManager:
   - SonarSphere
   - Enemy
   - Exfil
+  - EnemySpawn
+  - handlight
   layers:
   - Default
   - TransparentFX

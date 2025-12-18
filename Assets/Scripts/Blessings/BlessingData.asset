@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BlessingData
   m_EditorClassIdentifier: 
   playerSettings:
-    lookSpeed: 100
+    lookSpeed: 400
   blessings:
   - blessingName: Empty
     unlocked: 1
@@ -28,9 +28,9 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: c461eb290063f2242884f7fab9642fb4, type: 3}
     blessingData:
     - variableStringName: detectionMultiplier
-      variableValue: 0.5
+      variableValue: 1
     - variableStringName: detectionMultiplierStep
-      variableValue: 0.25
+      variableValue: 1
   - blessingName: Glided Crown
     unlocked: 0
     blessingActive: 0

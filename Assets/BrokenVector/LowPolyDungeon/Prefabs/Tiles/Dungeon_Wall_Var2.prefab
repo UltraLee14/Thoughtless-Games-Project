@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 210442451396089719}
   - component: {fileID: 210442451395286871}
   - component: {fileID: 210442451394319767}
-  - component: {fileID: 6062068521311885227}
+  - component: {fileID: 167514577534138569}
   m_Layer: 0
   m_Name: Dungeon_Wall_Var2
   m_TagString: Untagged
@@ -55,7 +55,7 @@ MeshRenderer:
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 0
+  m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
@@ -73,7 +73,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
+  m_ReceiveGI: 2
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -87,8 +87,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6062068521311885227
-MeshCollider:
+--- !u!65 &167514577534138569
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,7 +105,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7322927112031727365, guid: ab61c646b6bbc5c498e1e835ea9ac264, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 4.0220184, y: 5.18272, z: 0.23740315}
+  m_Center: {x: 0.011009634, y: 2.3913598, z: -1.9075781}
