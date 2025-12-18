@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="Event" id="{19b2bc8c-6c01-4770-b3ee-f4ee5689dc7a}">
+		<property name="name">
+			<value>Barn_Door_Open</value>
+		</property>
+		<property name="outputFormat">
+			<value>1</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ce1e6963-08c4-4d70-8bf4-2d438a08a145}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{b2cdefe1-72fa-4f4c-9a1c-ca09d21ffc30}</destination>
+		</relationship>
+		<relationship name="masterTrack">
+			<destination>{4ec3086b-ae14-4ea0-8974-53732787bcdc}</destination>
+		</relationship>
+		<relationship name="mixerInput">
+			<destination>{f6a2b0d5-c9df-43bf-9b6b-d9f2668948a5}</destination>
+		</relationship>
+		<relationship name="automatableProperties">
+			<destination>{682b72da-b5b2-4dec-9496-4ee44b6665ea}</destination>
+		</relationship>
+		<relationship name="markerTracks">
+			<destination>{215999e5-567d-485d-8a4f-5947c5a34ea0}</destination>
+		</relationship>
+		<relationship name="timeline">
+			<destination>{47b1396f-dc46-4768-9f24-6d45840894e9}</destination>
+		</relationship>
+	</object>
+	<object class="EventMixer" id="{b2cdefe1-72fa-4f4c-9a1c-ca09d21ffc30}">
+		<relationship name="masterBus">
+			<destination>{b8f3a1c9-123f-4fa3-8526-15a80c9a07f0}</destination>
+		</relationship>
+	</object>
+	<object class="MasterTrack" id="{4ec3086b-ae14-4ea0-8974-53732787bcdc}">
+		<relationship name="modules">
+			<destination>{f7680e4b-3fce-4ca1-b2a0-e1c0ef1a1713}</destination>
+		</relationship>
+		<relationship name="mixerGroup">
+			<destination>{b8f3a1c9-123f-4fa3-8526-15a80c9a07f0}</destination>
+		</relationship>
+	</object>
+	<object class="MixerInput" id="{f6a2b0d5-c9df-43bf-9b6b-d9f2668948a5}">
+		<relationship name="effectChain">
+			<destination>{7325d148-093b-429e-91f6-9260e4507320}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{fce6b6e9-fe30-4a14-b08e-3a243f311440}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{d9c80efc-8dd3-4fed-87c5-6ca5051cc142}</destination>
+		</relationship>
+	</object>
+	<object class="EventAutomatableProperties" id="{682b72da-b5b2-4dec-9496-4ee44b6665ea}" />
+	<object class="MarkerTrack" id="{215999e5-567d-485d-8a4f-5947c5a34ea0}" />
+	<object class="Timeline" id="{47b1396f-dc46-4768-9f24-6d45840894e9}">
+		<relationship name="modules">
+			<destination>{f7680e4b-3fce-4ca1-b2a0-e1c0ef1a1713}</destination>
+		</relationship>
+	</object>
+	<object class="EventMixerMaster" id="{b8f3a1c9-123f-4fa3-8526-15a80c9a07f0}">
+		<relationship name="effectChain">
+			<destination>{b17c81ff-a098-4b95-a843-9f530b9e4436}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{31e31df5-f95e-450e-ad5c-7e9ae1d1abad}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{b2cdefe1-72fa-4f4c-9a1c-ca09d21ffc30}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{f7680e4b-3fce-4ca1-b2a0-e1c0ef1a1713}">
+		<property name="length">
+			<value>3.9877777777777776</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{02696441-c858-46f4-9779-78c10d776d39}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{7325d148-093b-429e-91f6-9260e4507320}">
+		<relationship name="effects">
+			<destination>{bec325c7-481f-4eed-a047-231fded927df}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{fce6b6e9-fe30-4a14-b08e-3a243f311440}" />
+	<object class="MixerBusEffectChain" id="{b17c81ff-a098-4b95-a843-9f530b9e4436}">
+		<relationship name="effects">
+			<destination>{0fefbc54-a225-4b57-8fb9-1f1b112c33c0}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{31e31df5-f95e-450e-ad5c-7e9ae1d1abad}" />
+	<object class="MixerBusFader" id="{bec325c7-481f-4eed-a047-231fded927df}" />
+	<object class="MixerBusFader" id="{0fefbc54-a225-4b57-8fb9-1f1b112c33c0}" />
+</objects>
