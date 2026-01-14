@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d511f753868f664b85c8ac48f5b3d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blessingData: {fileID: 11400000, guid: 75332c605bca45d4981e01c5a73b6217, type: 2}
+  playerStatsObject: {fileID: 11400000, guid: 7ca4aeb50d6844748bffafe81af86ef7, type: 2}
   blessingDataToUpdate: Anklet of Agility
 --- !u!114 &6650395377022563175
 MonoBehaviour:

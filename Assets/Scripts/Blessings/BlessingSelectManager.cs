@@ -4,8 +4,8 @@ using TMPro;
 
 public class BlessingSelectManager : MonoBehaviour
 {
-    [SerializeField]
-    BlessingData blessingData;
+    [SerializeField, InspectorName("Player Stats Object")]
+    PlayerStats playerStatsObject;
 
     [SerializeField, InspectorName("Starting Blessing")]
     int StartingBlessing;
@@ -20,8 +20,8 @@ public class BlessingSelectManager : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < blessingData.blessings.Length; i++)
-            blessingData.blessings[i].blessingActive = false;
+        for (int i = 0; i < playerStatsObject.blessings.Length; i++)
+            playerStatsObject.blessings[i].blessingActive = false;
 
         currentBlessingIndices = new int[slotImages.Length];
 
@@ -51,19 +51,19 @@ public class BlessingSelectManager : MonoBehaviour
             return;
 
         if (previousIndex != 0)
-            blessingData.blessings[previousIndex].blessingActive = false;
+            playerStatsObject.blessings[previousIndex].blessingActive = false;
 
         currentBlessingIndices[slotIndex] = newIndex;
 
         if (newIndex != 0)
-            blessingData.blessings[newIndex].blessingActive = true;
+            playerStatsObject.blessings[newIndex].blessingActive = true;
 
         UpdateSlotImage(slotIndex);
     }
 
     int FindNextEligibleIndex(int startIndex, int direction)
     {
-        int length = blessingData.blessings.Length;
+        int length = playerStatsObject.blessings.Length;
         int index = startIndex;
 
         for (int i = 0; i < length; i++)
@@ -79,7 +79,7 @@ public class BlessingSelectManager : MonoBehaviour
 
     int FindNextEligibleIndexInclusive(int startIndex)
     {
-        int length = blessingData.blessings.Length;
+        int length = playerStatsObject.blessings.Length;
         int index = startIndex;
 
         for (int i = 0; i < length; i++)
@@ -97,7 +97,7 @@ public class BlessingSelectManager : MonoBehaviour
 
     bool IsBlessingEligible(int index)
     {
-        var blessing = blessingData.blessings[index];
+        var blessing = playerStatsObject.blessings[index];
 
         if (!blessing.unlocked)
             return false;
@@ -110,7 +110,7 @@ public class BlessingSelectManager : MonoBehaviour
 
     void UpdateSlotImage(int slotIndex)
     {
-        var blessing = blessingData.blessings[currentBlessingIndices[slotIndex]];
+        var blessing = playerStatsObject.blessings[currentBlessingIndices[slotIndex]];
         slotImages[slotIndex].sprite = blessing.itemImage;
 
         if (slotTexts != null && slotIndex < slotTexts.Length && slotTexts[slotIndex] != null)

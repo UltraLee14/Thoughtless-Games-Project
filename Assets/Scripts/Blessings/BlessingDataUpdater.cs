@@ -3,8 +3,8 @@ using UnityEngine;
 public class BlessingDataUpdater : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField, InspectorName("Blessing Data")]
-    BlessingData blessingData;
+    [SerializeField, InspectorName("Player Stats Object")]
+    PlayerStats playerStatsObject;
 
     [Header("Target")]
     [SerializeField, InspectorName("Blessing Data To Update")]
@@ -12,11 +12,14 @@ public class BlessingDataUpdater : MonoBehaviour
 
     public void SetIsCarryingTrue()
     {
-        for (int i = 0; i < blessingData.blessings.Length; i++)
+        if (playerStatsObject == null) return;
+        if (playerStatsObject.blessings == null) return;
+
+        for (int i = 0; i < playerStatsObject.blessings.Length; i++)
         {
-            if (blessingData.blessings[i].blessingName == blessingDataToUpdate)
+            if (playerStatsObject.blessings[i].blessingName == blessingDataToUpdate)
             {
-                blessingData.blessings[i].isCarrying = true;
+                playerStatsObject.blessings[i].isCarrying = true;
                 break;
             }
         }
@@ -24,19 +27,25 @@ public class BlessingDataUpdater : MonoBehaviour
 
     public void SetAllCarryingToFalse()
     {
-        for (int i = 0; i < blessingData.blessings.Length; i++)
+        if (playerStatsObject == null) return;
+        if (playerStatsObject.blessings == null) return;
+
+        for (int i = 0; i < playerStatsObject.blessings.Length; i++)
         {
-            blessingData.blessings[i].isCarrying = false;
+            playerStatsObject.blessings[i].isCarrying = false;
         }
     }
 
     public void BankAllCarry()
     {
-        for (int i = 0; i < blessingData.blessings.Length; i++)
+        if (playerStatsObject == null) return;
+        if (playerStatsObject.blessings == null) return;
+
+        for (int i = 0; i < playerStatsObject.blessings.Length; i++)
         {
-            if (blessingData.blessings[i].isCarrying)
+            if (playerStatsObject.blessings[i].isCarrying)
             {
-                blessingData.blessings[i].unlocked = true;
+                playerStatsObject.blessings[i].unlocked = true;
             }
         }
 

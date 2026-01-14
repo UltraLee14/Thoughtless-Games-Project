@@ -3,8 +3,8 @@ using UnityEngine;
 public class OfferingDataUpdate : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField, InspectorName("Offering Data")]
-    OfferingData offeringData;
+    [SerializeField, InspectorName("Player Stats Object")]
+    PlayerStats playerStatsObject;
 
     [Header("Target")]
     [SerializeField, InspectorName("Offering Data To Update")]
@@ -12,11 +12,14 @@ public class OfferingDataUpdate : MonoBehaviour
 
     public void SetIsCarryingTrue()
     {
-        for (int i = 0; i < offeringData.Offerings.Length; i++)
+        if (playerStatsObject == null) return;
+        if (playerStatsObject.offerings == null) return;
+
+        for (int i = 0; i < playerStatsObject.offerings.Length; i++)
         {
-            if (offeringData.Offerings[i].offeringName == offeringDataToUpdate)
+            if (playerStatsObject.offerings[i].offeringName == offeringDataToUpdate)
             {
-                offeringData.Offerings[i].isCarrying = true;
+                playerStatsObject.offerings[i].isCarrying = true;
                 break;
             }
         }
@@ -24,19 +27,25 @@ public class OfferingDataUpdate : MonoBehaviour
 
     public void SetAllCarryingToFalse()
     {
-        for (int i = 0; i < offeringData.Offerings.Length; i++)
+        if (playerStatsObject == null) return;
+        if (playerStatsObject.offerings == null) return;
+
+        for (int i = 0; i < playerStatsObject.offerings.Length; i++)
         {
-            offeringData.Offerings[i].isCarrying = false;
+            playerStatsObject.offerings[i].isCarrying = false;
         }
     }
 
     public void BankAllCarry()
     {
-        for (int i = 0; i < offeringData.Offerings.Length; i++)
+        if (playerStatsObject == null) return;
+        if (playerStatsObject.offerings == null) return;
+
+        for (int i = 0; i < playerStatsObject.offerings.Length; i++)
         {
-            if (offeringData.Offerings[i].isCarrying)
+            if (playerStatsObject.offerings[i].isCarrying)
             {
-                offeringData.Offerings[i].unlocked = true;
+                playerStatsObject.offerings[i].unlocked = true;
             }
         }
 

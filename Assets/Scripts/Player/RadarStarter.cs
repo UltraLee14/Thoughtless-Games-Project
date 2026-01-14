@@ -15,8 +15,8 @@ public class RadarStarter : MonoBehaviour
     }
 
     [Header("References")]
-    [SerializeField, InspectorName("Blessing Data")]
-    BlessingData blessingData;
+    [SerializeField, InspectorName("Player Stats Object")]
+    PlayerStats playerStatsObject;
 
     [Header("Radar Objects")]
     [SerializeField, InspectorName("Radar Objects")]
@@ -27,15 +27,16 @@ public class RadarStarter : MonoBehaviour
         for (int i = 0; i < radarObjects.Length; i++)
             radarObjects[i].locatable.enabled = false;
 
-        if (blessingData == null) return;
+        if (playerStatsObject == null) return;
+        if (playerStatsObject.blessings == null) return;
 
-        int count = Mathf.Min(radarObjects.Length, blessingData.blessings.Length);
+        int count = Mathf.Min(radarObjects.Length, playerStatsObject.blessings.Length);
         if (count <= 0) return;
 
         List<int> eligible = new List<int>(count);
         for (int i = 0; i < count; i++)
         {
-            if (blessingData.blessings[i].unlocked == false)
+            if (playerStatsObject.blessings[i].unlocked == false)
                 eligible.Add(i);
         }
 

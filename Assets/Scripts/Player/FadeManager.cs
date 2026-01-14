@@ -20,20 +20,39 @@ public class FadeManager : MonoBehaviour
     [SerializeField]
     UnityEvent FadeInEvent;
 
+    [SerializeField, InspectorName("Fade In Target Alpha (0-255)")]
+    int FadeInTargetAlpha = 0;
+
+    [SerializeField, InspectorName("Fade Out Target Alpha (0-255)")]
+    int FadeOutTargetAlpha = 255;
+
     Coroutine currentFade;
+
+    void OnValidate()
+    {
+        if (FadeInTargetAlpha < 0) FadeInTargetAlpha = 0;
+        if (FadeInTargetAlpha > 255) FadeInTargetAlpha = 255;
+
+        if (FadeOutTargetAlpha < 0) FadeOutTargetAlpha = 0;
+        if (FadeOutTargetAlpha > 255) FadeOutTargetAlpha = 255;
+    }
 
     public void FadeOut()
     {
         if (targetImage == null) return;
         if (currentFade != null) StopCoroutine(currentFade);
-        currentFade = StartCoroutine(FadeRoutine(1f, FadeoutDuration, FadeOutEvent));
+
+        float targetAlpha = FadeOutTargetAlpha / 255f;
+        currentFade = StartCoroutine(FadeRoutine(targetAlpha, FadeoutDuration, FadeOutEvent));
     }
 
     public void FadeIn()
     {
         if (targetImage == null) return;
         if (currentFade != null) StopCoroutine(currentFade);
-        currentFade = StartCoroutine(FadeRoutine(0f, FadeInDuration, FadeInEvent));
+
+        float targetAlpha = FadeInTargetAlpha / 255f;
+        currentFade = StartCoroutine(FadeRoutine(targetAlpha, FadeInDuration, FadeInEvent));
     }
 
     IEnumerator FadeRoutine(float targetAlpha, float duration, UnityEvent completeEvent)
@@ -70,5 +89,3 @@ public class FadeManager : MonoBehaviour
         currentFade = null;
     }
 }
-
-

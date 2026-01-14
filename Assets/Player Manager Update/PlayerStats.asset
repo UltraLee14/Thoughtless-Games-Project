@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29505a8334e7ec7469525400e4e6199a, type: 3}
+  m_Name: PlayerStats
+  m_EditorClassIdentifier: 
+  statValues:
+  - elementName: walkMoveSpeed
+    baseValue: 2.5
+    loadValue: 2.5
+    valueTypeString: 0
+    valueTypeInt: 0
+    valueTypeFloat: 1
+  - elementName: sprintMoveSpeed
+    baseValue: 5
+    loadValue: 5
+    valueTypeString: 0
+    valueTypeInt: 0
+    valueTypeFloat: 1
+  - elementName: sneakMoveSpeed
+    baseValue: 1
+    loadValue: 1
+    valueTypeString: 0
+    valueTypeInt: 0
+    valueTypeFloat: 1
+  - elementName: jumpForce
+    baseValue: 4
+    loadValue: 4
+    valueTypeString: 0
+    valueTypeInt: 0
+    valueTypeFloat: 1
+  - elementName: soundTriggerMultiplier
+    baseValue: 1.5
+    loadValue: 1.5
+    valueTypeString: 0
+    valueTypeInt: 0
+    valueTypeFloat: 1
+  - elementName: sonarRadius
+    baseValue: 15
+    loadValue: 15
+    valueTypeString: 0
+    valueTypeInt: 0
+    valueTypeFloat: 1
+  - elementName: sonarCharges
+    baseValue: 3
+    loadValue: 3
+    valueTypeString: 0
+    valueTypeInt: 1
+    valueTypeFloat: 0
+  controlValues:
+  - actionName: Move Forward
+    isKeybind: 1
+    defaultKey: 119
+    boundKey: 119
+  - actionName: Move Backward
+    isKeybind: 1
+    defaultKey: 115
+    boundKey: 115
+  - actionName: Move Left
+    isKeybind: 1
+    defaultKey: 97
+    boundKey: 97
+  - actionName: Move Right
+    isKeybind: 1
+    defaultKey: 100
+    boundKey: 100
+  - actionName: Sprint
+    isKeybind: 1
+    defaultKey: 304
+    boundKey: 304
+  - actionName: Sneak
+    isKeybind: 1
+    defaultKey: 306
+    boundKey: 306
+  - actionName: Jump
+    isKeybind: 1
+    defaultKey: 32
+    boundKey: 32
+  - actionName: Interact
+    isKeybind: 1
+    defaultKey: 102
+    boundKey: 102
+  - actionName: Echo Locate
+    isKeybind: 1
+    defaultKey: 114
+    boundKey: 114
+  lookSpeed: 10
+  blessings:
+  - blessingName: Empty
+    unlocked: 0
+    blessingActive: 0
+    isCarrying: 0
+    itemImage: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+    blessingData: []
+  - blessingName: Skull Of Stealth
+    unlocked: 0
+    blessingActive: 0
+    isCarrying: 0
+    itemImage: {fileID: 21300000, guid: c461eb290063f2242884f7fab9642fb4, type: 3}
+    blessingData:
+    - targetStatValue: soundTriggerMultiplier
+      statValueModifier: -1
+      add: 1
+      multiply: 0
+  - blessingName: Anklet of Agility
+    unlocked: 0
+    blessingActive: 0
+    isCarrying: 0
+    itemImage: {fileID: 21300000, guid: 59b5547a840b3e44b92559113494cefd, type: 3}
+    blessingData:
+    - targetStatValue: walkMoveSpeed
+      statValueModifier: 1.5
+      add: 0
+      multiply: 1
+    - targetStatValue: sneakMoveSpeed
+      statValueModifier: 1.5
+      add: 0
+      multiply: 1
+    - targetStatValue: sprintMoveSpeed
+      statValueModifier: 1.5
+      add: 0
+      multiply: 1
+  - blessingName: Horn of Hearing
+    unlocked: 0
+    blessingActive: 0
+    isCarrying: 0
+    itemImage: {fileID: 21300000, guid: 28db89a5957b2a948baf365dc0db3d1d, type: 3}
+    blessingData:
+    - targetStatValue: sonarRadius
+      statValueModifier: 10
+      add: 1
+      multiply: 0
+    - targetStatValue: sonarCharges
+      statValueModifier: 2
+      add: 0
+      multiply: 1
+  offerings:
+  - offeringName: OfferingZero
+    unlocked: 0
+    isCarrying: 0
+    offeringData: []
+  - offeringName: OfferingOne
+    unlocked: 0
+    isCarrying: 0
+    offeringData: []

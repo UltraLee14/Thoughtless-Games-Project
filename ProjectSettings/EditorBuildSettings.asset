@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalChambers.unity
     guid: ca3a739d5c1f68c44bd99afb4198389d
+  - enabled: 1
+    path: Assets/Scenes/FinalChambersUpdate.unity
+    guid: a87db8924ecb76345942c889323f06f6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
