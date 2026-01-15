@@ -4,8 +4,8 @@ using UnityEngine.Events;
 public class AllOfferingsUnlocked : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField, InspectorName("Offering Data")]
-    OfferingData offeringData;
+    [SerializeField, InspectorName("Player Stats Object")]
+    PlayerStats playerStatsObject;
 
     [Header("Events")]
     [SerializeField, InspectorName("Unlock End Event")]
@@ -13,13 +13,13 @@ public class AllOfferingsUnlocked : MonoBehaviour
 
     void Start()
     {
-        if (offeringData == null) return;
+        if (playerStatsObject == null) return;
 
-        if (offeringData.Offerings == null || offeringData.Offerings.Length == 0) return;
+        if (playerStatsObject.offerings == null || playerStatsObject.offerings.Length == 0) return;
 
-        for (int i = 0; i < offeringData.Offerings.Length; i++)
+        for (int i = 0; i < playerStatsObject.offerings.Length; i++)
         {
-            if (!offeringData.Offerings[i].unlocked)
+            if (!playerStatsObject.offerings[i].unlocked)
                 return;
         }
 
