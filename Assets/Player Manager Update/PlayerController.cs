@@ -30,6 +30,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField, InspectorName("Sonar Charge Display Text")]
     TMP_Text sonarChargeDisplayText;
 
+    [SerializeField, InspectorName("Collected Gold Display Text")]
+    TMP_Text collectedGoldDisplayText;
+
     [SerializeField] float walkMoveSpeed;
     [SerializeField] float sneakMoveSpeed;
     [SerializeField] float sprintMoveSpeed;
@@ -80,6 +83,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        if (playerStatsObject != null)
+            playerStatsObject.pendingGoldBalance = 0;
+
         ApplyPlayerStats();
         ApplyControlValues();
         ApplyLookSpeed();
@@ -87,6 +93,7 @@ public class PlayerController : MonoBehaviour
         statsLoaded = true;
 
         UpdateSonarUI();
+        UpdateCollectedGoldUI();
     }
 
     void CacheInitialPitch()
@@ -226,6 +233,7 @@ public class PlayerController : MonoBehaviour
         UpdateSonarSphere();
         HandleSonarPulse();
         UpdateSonarUI();
+        UpdateCollectedGoldUI();
     }
 
     void HandleLook()
@@ -318,7 +326,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator SonarPulseRoutine()
     {
         sonarTriggerSphere.enabled = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.25f);
         sonarTriggerSphere.enabled = false;
     }
 
@@ -326,6 +334,13 @@ public class PlayerController : MonoBehaviour
     {
         if (sonarChargeDisplayText == null) return;
         sonarChargeDisplayText.text = $"Sonar Remaining: {sonarCharges}";
+    }
+
+    void UpdateCollectedGoldUI()
+    {
+        if (collectedGoldDisplayText == null) return;
+        if (playerStatsObject == null) return;
+        collectedGoldDisplayText.text = $"Gold Collected: {playerStatsObject.pendingGoldBalance}";
     }
 
 #if UNITY_EDITOR
@@ -351,6 +366,7 @@ public class PlayerController : MonoBehaviour
         SerializedProperty sonarTriggerSphereProp;
 
         SerializedProperty sonarChargeDisplayTextProp;
+        SerializedProperty collectedGoldDisplayTextProp;
 
         SerializedProperty walkMoveSpeedProp;
         SerializedProperty sneakMoveSpeedProp;
@@ -386,6 +402,7 @@ public class PlayerController : MonoBehaviour
             sonarTriggerSphereProp = serializedObject.FindProperty("sonarTriggerSphere");
 
             sonarChargeDisplayTextProp = serializedObject.FindProperty("sonarChargeDisplayText");
+            collectedGoldDisplayTextProp = serializedObject.FindProperty("collectedGoldDisplayText");
 
             walkMoveSpeedProp = serializedObject.FindProperty("walkMoveSpeed");
             sneakMoveSpeedProp = serializedObject.FindProperty("sneakMoveSpeed");
@@ -447,6 +464,7 @@ public class PlayerController : MonoBehaviour
                 using (new EditorGUI.IndentLevelScope())
                 {
                     EditorGUILayout.PropertyField(sonarChargeDisplayTextProp, new GUIContent("Sonar Charge Display Text"));
+                    EditorGUILayout.PropertyField(collectedGoldDisplayTextProp, new GUIContent("Collected Gold Display Text"));
                 }
                 EditorGUILayout.Space(6);
             }
@@ -605,6 +623,7 @@ public class PlayerController : MonoBehaviour
                 "soundTriggerSphere",
                 "sonarTriggerSphere",
                 "sonarChargeDisplayText",
+                "collectedGoldDisplayText",
                 "walkMoveSpeed",
                 "sneakMoveSpeed",
                 "sprintMoveSpeed",

@@ -111,7 +111,7 @@ MonoBehaviour:
       add: 1
       multiply: 0
   - blessingName: Anklet of Agility
-    unlocked: 0
+    unlocked: 1
     blessingActive: 0
     isCarrying: 0
     itemImage: {fileID: 21300000, guid: 59b5547a840b3e44b92559113494cefd, type: 3}
@@ -151,3 +151,5 @@ MonoBehaviour:
     unlocked: 0
     isCarrying: 0
     offeringData: []
+  goldBalance: 0
+  pendingGoldBalance: 167

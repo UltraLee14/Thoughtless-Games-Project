@@ -99,7 +99,6 @@ public class PlayerStats : ScriptableObject
         public KeyCode boundKey;
     }
 
-    // --- Offerings (added) ---
     [Serializable]
     public class OfferingDataElement
     {
@@ -138,9 +137,15 @@ public class PlayerStats : ScriptableObject
     [InspectorName("Blessings")]
     public Blessing[] blessings;
 
-    [FormerlySerializedAs("offerings")]
     [InspectorName("Offerings")]
     public Offering[] offerings;
+
+    [Header("Loot")]
+    [SerializeField, InspectorName("Gold Balance")]
+    public int goldBalance;
+
+    [SerializeField, InspectorName("Pending Gold Balance")]
+    public int pendingGoldBalance;
 
     public void RecalculateLoadValues()
     {
@@ -273,12 +278,16 @@ public class PlayerStatsEditor : Editor
     bool showBlessings = true;
     bool showControlSettings = true;
     bool showOfferings = true;
+    bool showLoot = true;
 
     SerializedProperty statValuesProp;
     SerializedProperty blessingsProp;
     SerializedProperty controlValuesProp;
     SerializedProperty lookSpeedProp;
     SerializedProperty offeringsProp;
+
+    SerializedProperty goldBalanceProp;
+    SerializedProperty pendingGoldBalanceProp;
 
     ReorderableList statList;
 
@@ -289,6 +298,9 @@ public class PlayerStatsEditor : Editor
         controlValuesProp = serializedObject.FindProperty("controlValues");
         lookSpeedProp = serializedObject.FindProperty("lookSpeed");
         offeringsProp = serializedObject.FindProperty("offerings");
+
+        goldBalanceProp = serializedObject.FindProperty("goldBalance");
+        pendingGoldBalanceProp = serializedObject.FindProperty("pendingGoldBalance");
 
         statList = new ReorderableList(serializedObject, statValuesProp, true, true, true, true);
         statList.drawHeaderCallback = (Rect rect) =>
@@ -414,6 +426,16 @@ public class PlayerStatsEditor : Editor
             EditorGUI.indentLevel++;
             EditorGUILayout.PropertyField(controlValuesProp, true);
             EditorGUILayout.PropertyField(lookSpeedProp, new GUIContent("Look Speed"));
+            EditorGUI.indentLevel--;
+            EditorGUILayout.Space(6);
+        }
+
+        showLoot = EditorGUILayout.Foldout(showLoot, "Loot", true);
+        if (showLoot)
+        {
+            EditorGUI.indentLevel++;
+            EditorGUILayout.PropertyField(goldBalanceProp, new GUIContent("Gold Balance"));
+            EditorGUILayout.PropertyField(pendingGoldBalanceProp, new GUIContent("Pending Gold Balance"));
             EditorGUI.indentLevel--;
         }
 
