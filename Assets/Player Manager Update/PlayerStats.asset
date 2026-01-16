@@ -140,8 +140,8 @@ MonoBehaviour:
       multiply: 0
     - targetStatValue: sonarCharges
       statValueModifier: 2
-      add: 0
-      multiply: 1
+      add: 1
+      multiply: 0
   offerings:
   - offeringName: OfferingZero
     unlocked: 0

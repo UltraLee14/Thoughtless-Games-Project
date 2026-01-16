@@ -161,4 +161,4 @@ MonoBehaviour:
         m_CallState: 2
   playerStatsObject: {fileID: 11400000, guid: 7ca4aeb50d6844748bffafe81af86ef7, type: 2}
   isLoot: 1
-  lootValue: 5
+  lootValue: 15
